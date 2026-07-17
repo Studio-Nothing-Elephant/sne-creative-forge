@@ -778,6 +778,33 @@ function buildSummary(){
     notesBlock.style.display='block';
     document.getElementById('bpNotes').textContent = val('notes');
   } else { notesBlock.style.display='none'; }
+
+  // Required fields validation
+  const hasVision = !!val('vision');
+  const hasPlatform = !!val('platform');
+  const hasAudience = !!val('audience');
+  const hasService = selChecklist().length > 0;
+
+  const missing = [];
+  if (!hasVision) missing.push("Vision");
+  if (!hasPlatform) missing.push("Platform & Goal");
+  if (!hasAudience) missing.push("Audience");
+  if (!hasService) missing.push("at least one Service Requested");
+
+  const submitBtn = document.getElementById('submitBtn');
+  const status = document.getElementById('submitStatus');
+
+  if (missing.length > 0) {
+    submitBtn.disabled = true;
+    submitBtn.style.opacity = "0.5";
+    submitBtn.style.cursor = "not-allowed";
+    status.innerHTML = `<span style="color: #cfc8b6; font-size: 13.5px; display: block; margin-bottom: 4px;">⚠️ Complete at least 4 required fields before submitting your brief:</span><span style="color: #a5673f; font-weight: 500; font-size: 13px;">Missing: ${missing.join(', ')}</span>`;
+  } else {
+    submitBtn.disabled = false;
+    submitBtn.style.opacity = "";
+    submitBtn.style.cursor = "";
+    status.innerHTML = "";
+  }
 }
 
 document.getElementById('editBtn').addEventListener('click', ()=>{
