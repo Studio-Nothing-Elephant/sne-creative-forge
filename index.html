@@ -4,6 +4,7 @@
 <meta charset="UTF-8">
 <title>Studio Nothing Elephant — The Creative Forge</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,500;9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -643,11 +644,12 @@
     </div>
 
     <div class="actions">
-      <button class="btn primary" id="copyBtn">Copy blueprint as text</button>
-      <button class="btn ghost" id="downloadBtn">Download as .txt</button>
-      <button class="btn ghost" id="emailBtn">Send to Studio Nothing Elephant</button>
+      <button class="btn primary" id="submitBtn">Submit brief to Studio Nothing Elephant</button>
+      <button class="btn ghost" id="copyBtn">Copy as text</button>
+      <button class="btn ghost" id="downloadBtn">Download .txt</button>
       <button class="btn ghost" id="editBtn">← Edit answers</button>
     </div>
+    <p id="submitStatus" style="font-size:13px;color:#8f8a7c;margin-top:14px;"></p>
   </div>
 
 </div>
@@ -858,10 +860,59 @@ document.getElementById('downloadBtn').addEventListener('click', ()=>{
   toast('Blueprint downloaded');
 });
 
-document.getElementById('emailBtn').addEventListener('click', ()=>{
-  const subject = encodeURIComponent('Creative Forge Blueprint — ' + document.getElementById('bpProjectName').textContent);
-  const body = encodeURIComponent(blueprintText());
-  window.location.href = `mailto:studionothingelephant@gmail.com?subject=${subject}&body=${body}`;
+document.getElementById('emailBtn')?.remove(); // legacy, superseded by submitBtn
+
+/* ============================================================
+   EMAILJS SETUP — fill in these 3 values from your free
+   emailjs.com account, then this button sends submissions
+   straight to your Gmail automatically. Until filled in, it
+   falls back to opening the client's own email app (mailto).
+   ============================================================ */
+const EMAILJS_PUBLIC_KEY  = "YOUR_PUBLIC_KEY";   // Account → General
+const EMAILJS_SERVICE_ID  = "YOUR_SERVICE_ID";   // Email Services → your connected Gmail
+const EMAILJS_TEMPLATE_ID = "YOUR_TEMPLATE_ID";  // Email Templates → the template you create
+
+const emailjsConfigured = ![EMAILJS_PUBLIC_KEY, EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID]
+  .some(v => v.startsWith("YOUR_"));
+
+if (emailjsConfigured && window.emailjs) {
+  emailjs.init(EMAILJS_PUBLIC_KEY);
+}
+
+document.getElementById('submitBtn').addEventListener('click', async ()=>{
+  const btn = document.getElementById('submitBtn');
+  const status = document.getElementById('submitStatus');
+  const projectName = document.getElementById('bpProjectName').textContent;
+  const clientLine = document.getElementById('bpClient').textContent;
+  const clientEmail = val('email');
+
+  if (emailjsConfigured && window.emailjs) {
+    btn.disabled = true;
+    btn.textContent = "Sending…";
+    try {
+      await emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, {
+        project_name: projectName,
+        client_line: clientLine,
+        client_email: clientEmail || "not provided",
+        blueprint: blueprintText(),
+        to_email: "studionothingelephant@gmail.com"
+      });
+      btn.textContent = "Sent ✓";
+      status.textContent = "Delivered to Studio Nothing Elephant. You'll hear back soon.";
+      toast('Brief sent');
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = "Submit brief to Studio Nothing Elephant";
+      status.textContent = "Something went wrong sending automatically — please use Copy or Download and email it instead.";
+      console.error(err);
+    }
+  } else {
+    // Fallback: not yet configured, use mailto
+    const subject = encodeURIComponent('Creative Forge Blueprint — ' + projectName);
+    const body = encodeURIComponent(blueprintText());
+    window.location.href = `mailto:studionothingelephant@gmail.com?subject=${subject}&body=${body}`;
+    status.textContent = "Opening your email app to send this — if nothing opens, use Copy or Download instead.";
+  }
 });
 
 showStep(1);
