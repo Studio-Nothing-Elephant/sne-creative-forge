@@ -1,9 +1,217 @@
-<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>FTPON Brand Partnership One-Pager</title><style>
-body{margin:0;background:#0b0d10;color:#eef2f7;font:16px/1.5 Arial,sans-serif}.page{max-width:850px;margin:auto;padding:45px 30px}.k{font-size:11px;letter-spacing:.15em;color:#8993a0;text-transform:uppercase}h1{font-size:46px;line-height:1.05}h2{font-size:22px;margin-top:28px}.box{background:#12161b;border:1px solid #28303a;border-radius:10px;padding:18px;margin:12px 0}.cols{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}p,li{color:#b9c1cb}.price{font-weight:bold;color:#fff}@media(max-width:700px){.cols{grid-template-columns:1fr}h1{font-size:36px}}</style></head><body><div class="page">
-<div class="k">Studio Nothing Elephant · Brand Partnership</div><h1>Fixed to the Power of None</h1><p style="font-size:20px">A two-part cinematic experience: a traditional film followed by a 38-week interactive investigation that repeatedly revisits the same pivotal night while progressively revealing the truth.</p>
-<h2>The two halves</h2><div class="cols"><div class="box"><b>HALF 1</b><p>Traditional film. World, characters, conflict and mystery.</p></div><div class="box"><b>HALF 2</b><p>38 Loops. The same night is revisited with new information.</p></div><div class="box"><b>INVESTIGATION</b><p>Evidence, clues, audience participation and reveals.</p></div></div>
-<h2>Brand rights</h2><div class="box"><b>FILM RIGHTS</b><p>Location, world, character and in-world integrations.</p></div><div class="box"><b>LOOP RIGHTS</b><p>Association with selected weekly iterations.</p></div><div class="box"><b>INVESTIGATION RIGHTS</b><p>Evidence drops, branded clues, prompts and sponsored reveals.</p></div>
-<h2>Rate Card A — Pre-Pilot</h2><div class="box"><p>Micro Integration <span class="price">$5K–$10K</span></p><p>Character Integration <span class="price">$10K–$20K</span></p><p>World / Environment <span class="price">$20K–$35K</span></p><p>Digital / Investigation <span class="price">$20K–$40K</span></p><p>Loop Partner <span class="price">$35K–$60K</span></p><p>Category Partner <span class="price">$50K–$75K</span></p><p>Principal Partner <span class="price">$100K–$150K</span></p></div>
-<h2>Capital & proof</h2><p>Pilot capital requirement: <b>$180K revised</b>.<br>Season 1 capital requirement: <b>$750K</b>.<br>Internal Year-1 contracted sponsorship target: <b>$145K–$250K</b>.</p><p>No unsupported audience claim is used. The narrative engine is currently design/architecture; the pilot is the valuation event that converts design into proven value.</p>
-<h2>Partnership principles</h2><ul><li>In-world integration rather than conventional interruption advertising.</li><li>No sponsor editorial control.</li><li>Exclusivity only when expressly contracted.</li><li>SNE retains FTPON IP unless separately agreed in writing.</li></ul>
-<p><b>Studio Nothing Elephant</b> · Confidential · 2026</p></div></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FTPON Brand Partnership One-Pager</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;700&family=Fraunces:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0c;
+            --card-bg: rgba(255, 255, 255, 0.03);
+            --card-border: rgba(255, 255, 255, 0.08);
+            --text-main: #e6e6e6;
+            --text-muted: #a0a0a0;
+            --gold: #E8A020;
+            --gold-dim: rgba(232, 160, 32, 0.15);
+        }
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg);
+            color: var(--text-main);
+            line-height: 1.6;
+            max-width: 960px;
+            margin: 0 auto;
+            padding: 60px 40px;
+        }
+        .brand-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 80px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid var(--card-border);
+        }
+        .brand-header img {
+            width: 46px; /* 15% larger than standard 40px */
+            height: 46px;
+            object-fit: contain;
+        }
+        .brand-text {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            color: var(--gold);
+        }
+        h1 {
+            font-family: 'Fraunces', serif;
+            font-size: 52px;
+            font-weight: 600;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            color: #fff;
+        }
+        h1 em { font-style: italic; color: var(--gold); }
+        .lead {
+            font-size: 18px;
+            color: var(--text-muted);
+            max-width: 720px;
+            margin-bottom: 60px;
+            line-height: 1.7;
+        }
+        .section-label {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin: 70px 0 16px;
+        }
+        h2 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 24px;
+            color: #fff;
+            letter-spacing: -0.02em;
+        }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-bottom: 20px; }
+        .card {
+            background: var(--card-bg);
+            border: 1px solid var(--card-border);
+            border-radius: 12px;
+            padding: 28px;
+            transition: border-color 0.3s ease;
+        }
+        .card:hover { border-color: var(--gold-dim); }
+        .card h3 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 13px;
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--gold);
+            margin-bottom: 12px;
+        }
+        .card p { font-size: 15px; color: var(--text-muted); margin: 0; line-height: 1.6; }
+        
+        table { width: 100%; border-collapse: collapse; margin: 20px 0; font-size: 14px; }
+        th {
+            text-align: left; padding: 16px 12px;
+            font-family: 'Space Grotesk', sans-serif; font-weight: 700;
+            color: var(--gold); font-size: 11px; letter-spacing: 0.1em; text-transform: uppercase;
+            border-bottom: 1px solid var(--card-border);
+        }
+        td { padding: 16px 12px; border-bottom: 1px solid var(--card-border); color: var(--text-muted); }
+        tr:last-child td { border-bottom: none; }
+        .price { color: #fff; font-weight: 600; font-family: 'Space Grotesk', sans-serif; }
+        
+        ul { margin: 20px 0; padding-left: 20px; color: var(--text-muted); }
+        li { margin-bottom: 12px; font-size: 15px; line-height: 1.6; }
+        li::marker { color: var(--gold); }
+        
+        .footer {
+            margin-top: 100px; padding-top: 30px;
+            border-top: 1px solid var(--card-border);
+            font-size: 12px; color: #555; text-align: center;
+            font-family: 'Space Grotesk', sans-serif; letter-spacing: 0.05em;
+        }
+        @media (max-width: 768px) {
+            body { padding: 40px 20px; }
+            h1 { font-size: 36px; }
+            .grid-3 { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="brand-header">
+        <img src="assets/sne-logo-light.png" alt="Studio Nothing Elephant">
+        <div class="brand-text">Studio Nothing Elephant · Brand Partnership</div>
+    </div>
+
+    <h1>FTPON Brand Partnership <em>One-Pager</em></h1>
+    <p class="lead">Fixed to the Power of None is a two-part cinematic experience: a traditional film followed by a 38-week interactive investigation that repeatedly revisits the same pivotal night while progressively revealing the truth.</p>
+
+    <div class="section-label">The Two Halves</div>
+    <h2>Structure</h2>
+    <div class="grid-3">
+        <div class="card">
+            <h3>Half 1</h3>
+            <p>Traditional film. World, characters, conflict and mystery.</p>
+        </div>
+        <div class="card">
+            <h3>Half 2</h3>
+            <p>38 Loops. The same night is revisited with new information.</p>
+        </div>
+        <div class="card">
+            <h3>Investigation</h3>
+            <p>Evidence, clues, audience participation and reveals.</p>
+        </div>
+    </div>
+
+    <div class="section-label">Brand Rights</div>
+    <h2>Integration opportunities</h2>
+    <div class="grid-3">
+        <div class="card">
+            <h3>Film Rights</h3>
+            <p>Location, world, character and in-world integrations.</p>
+        </div>
+        <div class="card">
+            <h3>Loop Rights</h3>
+            <p>Association with selected weekly iterations.</p>
+        </div>
+        <div class="card">
+            <h3>Investigation Rights</h3>
+            <p>Evidence drops, branded clues, prompts and sponsored reveals.</p>
+        </div>
+    </div>
+
+    <div class="section-label">Rate Card A — Pre-Pilot</div>
+    <h2>Partnership investment</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Right</th>
+                <th>Price</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr><td>Micro Integration</td><td class="price">$5K–$10K</td></tr>
+            <tr><td>Character Integration</td><td class="price">$10K–$20K</td></tr>
+            <tr><td>World / Environment</td><td class="price">$20K–$35K</td></tr>
+            <tr><td>Digital / Investigation</td><td class="price">$20K–$40K</td></tr>
+            <tr><td>Loop Partner</td><td class="price">$35K–$60K</td></tr>
+            <tr><td>Category Partner</td><td class="price">$50K–$75K</td></tr>
+            <tr><td>Principal Partner</td><td class="price">$100K–$150K</td></tr>
+        </tbody>
+    </table>
+
+    <div class="section-label">Capital & Proof</div>
+    <h2>Financial framework</h2>
+    <p style="margin-top: 24px; color: var(--text-muted); font-size: 15px;">
+        <strong style="color: #fff;">Pilot capital requirement:</strong> $180K revised.<br>
+        <strong style="color: #fff;">Season 1 capital requirement:</strong> $750K.<br>
+        <strong style="color: #fff;">Internal Year-1 contracted sponsorship target:</strong> $145K–$250K.
+    </p>
+    <p style="margin-top: 20px; font-size: 15px; color: var(--text-muted);">No unsupported audience claim is used. The narrative engine is currently design/architecture; the pilot is the valuation event that converts design into proven value.</p>
+
+    <div class="section-label">Partnership Principles</div>
+    <h2>Operating standards</h2>
+    <ul>
+        <li>In-world integration rather than conventional interruption advertising.</li>
+        <li>No sponsor editorial control.</li>
+        <li>Exclusivity only when expressly contracted.</li>
+        <li>SNE retains FTPON IP unless separately agreed in writing.</li>
+    </ul>
+
+    <div class="footer">
+        Studio Nothing Elephant · Confidential · 2026
+    </div>
+
+</body>
+</html>
