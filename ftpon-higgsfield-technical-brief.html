@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fixed to the Power of None × Higgsfield — Technical Production Brief</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&family=Space+Grotesk:wght@500;700;800&display=swap" rel="stylesheet">
+<style>
+:root {
+    --bg: #0a0a0c;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --card-border: rgba(255, 255, 255, 0.08);
+    --text-main: #e6e6e6;
+    --text-muted: #a0a0a0;
+    --gold: #E8A020;
+    --gold-dim: rgba(232, 160, 32, 0.15);
+}
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'Inter', sans-serif;
+    background: var(--bg);
+    color: var(--text-main);
+    line-height: 1.6;
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 56px 6%;
+}
+.brand-header {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin-bottom: 56px;
+    padding-bottom: 24px;
+    border-bottom: 1px solid var(--card-border);
+}
+.brand-header img {
+    width: 53px;
+    height: 53px;
+    object-fit: contain;
+}
+.brand-text {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--gold);
+}
+h1 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    line-height: 1.15;
+    margin-bottom: 6px;
+    color: #fff;
+}
+.meta {
+    font-size: 11px;
+    color: #57576c;
+    margin-bottom: 24px;
+}
+h2 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--gold);
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    margin: 32px 0 12px;
+}
+p, li { color: var(--text-muted); }
+ul { margin: 6px 0 0 18px; }
+strong { color: #f4f4f7; }
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+    margin: 16px 0;
+}
+.card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 12px;
+    padding: 20px;
+}
+.card h3 {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
+}
+.agent-flow {
+    background: rgba(232, 160, 32, 0.05);
+    border: 1px solid rgba(232, 160, 32, 0.2);
+    border-radius: 12px;
+    padding: 20px;
+    margin: 20px 0;
+    font-size: 13px;
+    line-height: 1.8;
+}
+.protocol {
+    background: rgba(232, 160, 32, 0.05);
+    border-left: 3px solid var(--gold);
+    padding: 16px 20px;
+    margin: 20px 0;
+    border-radius: 0 8px 8px 0;
+}
+.highlight {
+    color: var(--gold);
+    font-weight: 700;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 16px 0;
+    font-size: 13px;
+}
+th, td {
+    border: 1px solid var(--card-border);
+    padding: 12px;
+    text-align: left;
+}
+th {
+    background: rgba(232, 160, 32, 0.1);
+    font-weight: 700;
+    color: var(--gold);
+    font-size: 11px;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+footer {
+    border-top: 1px solid var(--card-border);
+    margin-top: 48px;
+    padding-top: 20px;
+    font-size: 11px;
+    color: #57576c;
+    text-align: center;
+}
+@media (max-width: 768px) {
+    body { padding: 40px 20px; }
+    h1 { font-size: 26px; }
+    .grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<div class="brand-header">
+    <img src="assets/sne-logo-light.png" alt="Studio Nothing Elephant">
+    <div class="brand-text">Studio Nothing Elephant · Technical Production Brief</div>
+</div>
+
+<h1>Fixed to the Power of None × Higgsfield</h1>
+<p class="meta">Confidential · Nairobi · September 2026</p>
+
+<h2>1. The Problem: Zero-Drift Consistency at Live Scale</h2>
+<p>FTPON's second half is 38 weekly iterations revisiting the same pivotal night. Hundreds of modular AI-generated scenes must hold <strong>character identity, lighting logic, and world continuity</strong> while re-rendering under live sports-data triggers within seconds. Offline consistency is solved; consistency at live scale is the open problem.</p>
+
+<h2>2. The Trigger State Matrix (TSM)</h2>
+<p>Live sports are unpredictable. We do not key modules to timestamps; we key them to <strong>(Location × Emotional State)</strong>.</p>
+<table>
+    <tr><th>Block Type</th><th>Code</th><th>Trigger Behavior</th></tr>
+    <tr><td><strong>Reactive (RX)</strong></td><td>Apex Bar, Githurai, Transit</td><td>Full module switch + glass layer HUD + Telegram drop.</td></tr>
+    <tr><td><strong>Oral (OR)</strong></td><td>Present scene w/ spoken backstory</td><td>Reactive, but with a <em>confession guard</em> (defers module to next seam if canon line is mid-delivery).</td></tr>
+    <tr><td><strong>Sacred (SC)</strong></td><td>Shown Flashbacks (Boston)</td><td><span class="highlight">Held.</span> Triggers queued and released as a single return-burst at the next RX seam.</td></tr>
+    <tr><td><strong>Judgment (JD)</strong></td><td>Weekly Fixture</td><td>Custom 3-min scene. FT result selects WIN/LOSS variant.</td></tr>
+</table>
+<p><strong>The Higgsfield Mandate:</strong> We need to batch-generate ~26 core modules per episode under a single character lock. If Higgsfield can pass the zero-drift batch test, the entire 38-week production model is validated.</p>
+
+<h2>3. The BOYD Live-Ops & Autonomous Generation Architecture</h2>
+<p>FTPON is a live software system. The BOYD backend is architected to ingest Sportradar webhooks, evaluate the Trigger State Matrix (TSM), and command OBS/Telegram in under 15 seconds. Higgsfield's stack provides the visual engine for this pipeline.</p>
+
+<div class="agent-flow">
+<strong>BOYD (The Live Showrunner):</strong> The n8n orchestration layer. Reads live sports data, maps it to the TSM (Reactive, Oral, Sacred, Judgment blocks), and fires WebSocket commands to OBS.<br><br>
+<strong>Higgsfield Genjutsu (The Zero-Drift Engine):</strong> The core visual mandate. BOYD requests batch generations of the 26 modular scene library. <strong>Genjutsu</strong> ensures the 5 principal characters and lighting logic hold absolute identity across every A/B variant and reaction insert.<br><br>
+<strong>MiniMax H3 Max (The Live Trigger Engine):</strong> Routed via fal.ai. When a live goal requires a net-new atmospheric plate or rapid character reaction variant within the 15-second broadcast window, BOYD routes to <strong>H3 Max</strong> for sub-30-second generation.<br><br>
+<strong>GPT Astra (The 3D & Finishing Operator):</strong> Astra autonomously operates <strong>Blender</strong> for 3D set extensions and <strong>DaVinci Resolve</strong> for automated conform and grading of the AI-generated modules before they are vaulted.<br><br>
+<strong>Higgsfield Supercomputer (The Cinematic Planner):</strong> For complex multi-shot spine scenes, BOYD feeds the screenplay to the <strong>Supercomputer</strong> to autonomously plan, pick models, and render with <strong>Genjutsu</strong> consistency locks.
+</div>
+
+<h2 style="font-size: 11px; font-weight: 700; color: var(--gold); text-transform: uppercase; letter-spacing: .12em; margin: 32px 0 12px;">The Live Runtime Topology</h2>
+<table>
+    <tr><th>System Layer</th><th>Function</th><th>Higgsfield / AI Plug-in</th></tr>
+    <tr><td><strong>Sportradar Webhook</strong></td><td>Ingests live match state (goals, cards).</td><td>Triggers BOYD TSM evaluation.</td></tr>
+    <tr><td><strong>BOYD TSM Engine</strong></td><td>Maps event to Scene Trigger Rule.</td><td>Queries the Vault for <strong>Genjutsu</strong>-locked pre-rendered assets.</td></tr>
+    <tr><td><strong>OBS WebSocket</strong></td><td>Cuts YouTube Live stream to correct clip (<100ms).</td><td>Plays back the <strong>H3 Max</strong> or <strong>Genjutsu</strong> generated module.</td></tr>
+    <tr><td><strong>Telegram Bot API</strong></td><td>Fires in-character audience messages.</td><td>Text generation routed via BOYD LLM.</td></tr>
+</table>
+<div class="protocol">
+    <strong style="color: #fff;">The Vault Mandate:</strong> Assets are generated in batch via <strong>Genjutsu</strong> and <strong>H3 Max</strong>, QA'd, and vaulted locally. The live 15-second trigger switches between pre-vaulted modules. <strong style="color: var(--gold);">Higgsfield inference is never in the live runtime path</strong>, guaranteeing broadcast stability.
+</div>
+
+<h2>4. The Three-Tier Infrastructure</h2>
+<div class="protocol">
+    <strong>Tier 1: Local Sovereign Compute (Air-Gapped)</strong><br>
+    Puget/ProArt stack. Reserved for the <strong>FF-4 Restricted Vault</strong> (the season finale convergence shots) and master LoRA training. The most sensitive narrative spoilers never touch a third-party server.
+</div>
+<div class="protocol">
+    <strong>Tier 2: Partner Inference (Higgsfield + fal.ai)</strong><br>
+    High-volume, consistency-locked generation for the weekly 26-module library via <strong>Higgsfield MCP/API</strong>. High-speed atmospheric generation via <strong>MiniMax H3 Max</strong> (fal.ai). Character reaction beats and glass-layer assets.
+</div>
+<div class="protocol">
+    <strong>Tier 3: Agentic Orchestration (BOYD + GPT Astra)</strong><br>
+    <strong>BOYD</strong> dynamically routes tasks based on IP sensitivity, latency, and credit availability. <strong>GPT Astra</strong> executes traditional software operations (Blender, Unreal, DaVinci) as BOYD's technical agent. Cloud overflow (Together/Replicate) for batch upscaling.
+</div>
+
+<h2>5. Proof of Execution</h2>
+<p><strong>Roman Money Died</strong> — A 21-minute broadcast-quality AI-generated documentary. 130+ sequential shots, locked chiaroscuro lighting, zero style drift, produced at near-zero capital. <br>
+<a href="https://youtu.be/6UrDrkI3_4Q" target="_blank" style="color: var(--gold);">▶ Watch the Proof of Execution (youtu.be/6UrDrkI3_4Q)</a></p>
+
+<h2>6. The Proposed Joint Test</h2>
+<p><strong>The Acceptance Test:</strong> Generate one family batch (e.g., A-C1 to A-C4: four intensities of chaos in the Apex Bar) + S-1/S-2 (Transit chase texture) in a single session using Higgsfield's identity-locking tools.</p>
+<p><strong>Success Metric:</strong> Zero character drift, zero anatomical artifacts, and locked lighting across the entire batch. If Higgsfield passes this test, the Season 1 production architecture is locked.</p>
+
+<footer>
+    <p><strong>Benjamin Njoroge Thiong'o</strong> · Founder, Studio Nothing Elephant<br>
+    studionothingelephant@gmail.com · +254-716-510-106 · Nairobi, Kenya<br>
+    <em>Confidential · Technical Production Brief · 2026</em></p>
+</footer>
+
+</body>
+</html>
